@@ -259,6 +259,15 @@ new class DivStage extends DivSprite {
             this.mouseX = e.clientX;
             this.mouseY = e.clientY;
         }
+        document.body.ontouchmove = e => {
+            this.isShoot = true
+            this.mouseX = e.touches[0].clientX
+            this.mouseY = e.touches[0].clientY
+        }
+        document.body.ontouchend = _ => {
+            this.isShoot = false
+        }
+        document.body.onscroll = e => e.preventDefault()
         document.body.onkeydown = () => this.isShoot = true;
         document.body.onkeyup = () => this.isShoot = false;
 
