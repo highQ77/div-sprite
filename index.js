@@ -196,8 +196,7 @@ class Ship extends DivSprite {
         this.setX('100px')
         this.setY('100px')
         this.setScale(3)
-        this.setBlendMode(BlendMode.luminosity)
-        this.setFilter('drop-shadow(0px 0px 10px orange)')
+        this.setFilter('drop-shadow(0px 0px 10px white)')
     }
 
 }
