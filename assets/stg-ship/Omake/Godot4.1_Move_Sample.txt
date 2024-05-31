@@ -1,0 +1,23 @@
+This set has been tested in Godot_v4.1.1-stable_mono_win64.
+
+Please refer to Unity_Move_Sample_Setting.png to set the key input.
+
+Only movement with the four-way controller is supported.
+
+By quickly entering the opposite direction between 0.3 and 0.6 seconds after the horizontal movement,
+An animation of the aircraft rotating will be played.
+
+Each own player_ship_32x32.png is created in the same format.
+You can replace it with something other than player_ship_1.
+
+
+付属のセットはGodot_v4.1.1-stable_mono_win64での動作を確認しています。
+Please refer to Unity_Move_Sample_Setting.png to
+
+十字キーによる移動のみサポートしています。
+
+横移動後0.3秒から0.6秒の間に素早く反対方向へ入力することで、
+自機が回転するアニメーションが再生されます。
+
+各自機のplayer_ship_32x32.pngは同じフォーマットで作成しているため、
+player_ship_1以外のものと差し替えることが出来ます。
