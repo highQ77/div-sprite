@@ -9,6 +9,22 @@ import Stats from "./stats.js"
 // https://doranarasi.itch.io/pixel-stg-player-ships-pack 
 // https://screamingbrainstudios.itch.io/seamless-space-backgrounds
 
+class BlendMode {
+    static normal = 'normal'
+    static multiply = 'multiply'
+    static screen = 'screen'
+    static overlay = 'overlay'
+    static darken = 'darken'
+    static lighten = 'lighten'
+    static color_dodge = 'color-dodge'
+    static color_burn = 'color-burn'
+    static difference = 'difference'
+    static exclusion = 'exclusion'
+    static hue = 'hue'
+    static saturation = 'saturation'
+    static color = 'color'
+    static luminosity = 'luminosity'
+}
 
 class DivSprite {
 
@@ -49,6 +65,10 @@ class DivSprite {
 
     getY() {
         return this.node.style.top
+    }
+
+    setBlendMode(m) {
+        this.node.style.mixBlendMode = m
     }
 
     setWidth(w) {
@@ -175,6 +195,9 @@ class Ship extends DivSprite {
         this.setHeight('32px')
         this.setX('100px')
         this.setY('100px')
+        this.setScale(3)
+        this.setBlendMode(BlendMode.luminosity)
+        this.setFilter('drop-shadow(0px 0px 10px orange)')
     }
 
 }
@@ -188,6 +211,7 @@ class Bullet extends DivSprite {
         this.setHeight('32px')
         this.setX('100px')
         this.setY('100px')
+        this.setFilter('overlay')
     }
 
     run() {
@@ -241,7 +265,6 @@ new class DivStage extends DivSprite {
         document.body.onkeyup = () => this.isShoot = false;
 
         let ship = this.addChild(new Ship)
-        ship.setScale(3)
 
         const s = this.addChild(new DivSprite)
         s.setWidth('auto')
