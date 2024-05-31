@@ -14,6 +14,8 @@ class DivSprite {
 
     node
     children = []
+    rotation = 0
+    scale = 0
 
     constructor() {
         this.node = document.createElement('div')
@@ -74,7 +76,8 @@ class DivSprite {
     }
 
     setRotation(r) {
-        this.node.style.transform = `rotateZ(${r}deg)`
+        this.rotation = r
+        this.node.style.transform = `rotate(${this.rotation}deg) scale(${this.scale})`
     }
 
     getRotation() {
@@ -82,7 +85,8 @@ class DivSprite {
     }
 
     setScale(s) {
-        this.node.style.transform = `scale(${s})`
+        this.scale = s
+        this.node.style.transform = `rotate(${this.rotation}deg) scale(${this.scale})`
     }
 
     getScale(s) {
