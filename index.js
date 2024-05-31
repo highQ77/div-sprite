@@ -211,7 +211,6 @@ class Bullet extends DivSprite {
         this.setHeight('32px')
         this.setX('100px')
         this.setY('100px')
-        this.setFilter('overlay')
     }
 
     run() {
