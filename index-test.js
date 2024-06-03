@@ -138,22 +138,22 @@ new class DivStage extends DivSprite {
 
         let container = []
 
-        let count = 510
-        for (let i = 0; i < count; i++) {
-            let cols = 30
-            let x = 50 * (i % cols)
-            let y = 50 * Math.floor(i / cols)
-            const s = this.addChild(new DivSprite)
-            s.setWidth('50px')
-            s.setHeight('50px')
-            s.setX(x + 'px')
-            s.setY(y + 'px')
-            s.setAlpha('.3')
-            s.setBackground(`rgb(${255 * Math.random()},${255 * Math.random()},${255 * Math.random()})`)
-            // s.setBackground(`url(sample.png)`)
-            // s.setBackgroundSize('100%')
-            container.push(s)
-        }
+        // let count = 510
+        // for (let i = 0; i < count; i++) {
+        //     let cols = 30
+        //     let x = 50 * (i % cols)
+        //     let y = 50 * Math.floor(i / cols)
+        //     const s = this.addChild(new DivSprite)
+        //     s.setWidth('50px')
+        //     s.setHeight('50px')
+        //     s.setX(x + 'px')
+        //     s.setY(y + 'px')
+        //     s.setAlpha('.3')
+        //     s.setBackground(`rgb(${255 * Math.random()},${255 * Math.random()},${255 * Math.random()})`)
+        //     // s.setBackground(`url(sample.png)`)
+        //     // s.setBackgroundSize('100%')
+        //     container.push(s)
+        // }
 
         const s = this.addChild(new DivSprite)
         s.setWidth('auto')
@@ -174,20 +174,21 @@ new class DivStage extends DivSprite {
         // 30fps 10000 sprites
         // 43fps 7500 sprites
         // 60fps 5000 sprites
-        // let count = 7500
-        // for (let i = 0; i < count; i++) {
-        //     let cols = 147
-        //     let x = 10 * (i % cols)
-        //     let y = 10 * Math.floor(i / cols)
-        //     const s = this.addChild(new DivSprite)
-        //     s.setWidth('20px')
-        //     s.setHeight('20px')
-        //     s.setX(x + 'px')
-        //     s.setY(y + 'px')
-        //     s.setAlpha('.3')
-        //     s.setBackground(`rgb(${255 * Math.random()},${255 * Math.random()},${255 * Math.random()})`)
-        //     container.push(s)
-        // }
+        let count = 10000
+        let unit = 1.47 * 7.5
+        let cols = 1470 / unit
+        for (let i = 0; i < count; i++) {
+            let x = unit * (i % cols)
+            let y = unit * Math.floor(i / cols)
+            const s = this.addChild(new DivSprite)
+            s.setWidth(unit + 'px')
+            s.setHeight(unit + 'px')
+            s.setX(x + 'px')
+            s.setY(y + 'px')
+            s.setAlpha('.3')
+            s.setBackground(`rgb(${255 * Math.random()},${255 * Math.random()},${255 * Math.random()})`)
+            container.push(s)
+        }
 
         var stats = new Stats();
         stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
